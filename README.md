@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# 🧩 React Component Library — Storybook Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a small **React component library** built with **Vite**, **TypeScript**, and **TailwindCSS**, visualized and documented using **Storybook**.  
+The goal of the assignment was to implement three reusable UI components and display them with different states and props inside Storybook.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## React Compiler
+- **React 19 + TypeScript**
+- **Vite** — fast bundler and dev server
+- **TailwindCSS** — styling
+- **Storybook 9 (React + Vite)** — interactive documentation and component testing
+- **ESLint + Prettier** — code formatting and linting
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧱 Implemented Components
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🔹 Input
+Smart input component supporting multiple types:
+- `text`, `password`, `number`
+- Clearable via “X” button
+- Password visibility toggle
+- Error message and label support  
+- Fully styled with Tailwind
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🔹 Toast
+Notification component that appears in the bottom-right corner:
+- Types: `success`, `info`, `warning`, `error`
+- Auto-dismiss with configurable duration
+- Smooth fade/slide transition
+- Manual close button
+- Reusable `<ToastViewport />` container for multiple toasts
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 🔹 SidebarMenu
+Collapsible sidebar with nested menu items:
+- Opens from the right side
+- Supports multi-level nested lists
+- Click outside or “Escape” closes menu
+- Smooth slide and accordion animations
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Component Screenshots
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+| Component | Example |
+|------------|----------|
+| **Input** | ![Input](./public/screenshots/input.png) |
+| **Toast (Success)** | ![Toast](./public/screenshots/toast.png) |
+| **SidebarMenu** | ![Sidebar](./public/screenshots/sidebar.png) |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+---
+
+## 🧭 Storybook
+
+Each component has its own stories showing variations of props and states.
+
+Run Storybook locally:
+```bash
+npm run storybook
