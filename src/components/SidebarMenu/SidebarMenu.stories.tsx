@@ -10,6 +10,10 @@ const meta: Meta<typeof SidebarMenu> = {
     open: true,
     title: 'Navigation',
   },
+    parameters: {
+    layout: 'fullscreen',
+    docs: { story: { height: '40vh' } },
+  },
 };
 export default meta;
 

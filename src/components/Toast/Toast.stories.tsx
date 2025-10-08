@@ -13,6 +13,10 @@ const meta: Meta<typeof Toast> = {
       </ToastViewport>
     ),
   ],
+  parameters: {
+    layout: 'fullscreen',
+    docs: { story: { height: '10vh' } },
+  },
 };
 export default meta;
 
