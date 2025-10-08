@@ -1,4 +1,6 @@
 import type { Preview } from '@storybook/react-vite';
+// @ts-expect-error: side-effect CSS import for Storybook
+import '../src/index.css'
 
 const preview: Preview = {
   parameters: {
